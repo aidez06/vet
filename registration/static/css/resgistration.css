@@ -1,0 +1,68 @@
+.modal-body {
+    display: flex;
+    position: relative;
+}
+
+.welcome-section,
+.form-section {
+    width: 50%; 
+    transition: transform 0.6s ease; 
+}
+
+.welcome-section {
+    background-color: #ff2c0b;
+    color: white;
+    z-index: 1; 
+}
+
+.form-section {
+    background-color: white;
+    z-index: 0; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+}
+
+#signupForm {
+    flex: 1; 
+}
+
+
+.welcome-section {
+    transition: transform 0.6s ease; 
+}
+
+.slide-out {
+    transform: translateX(100%); 
+}
+
+.slide-in {
+    transform: translateX(0); 
+}
+
+.d-none {
+    display: none !important; 
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom: 4px solid blue;
+    animation: bounce 0.5s;
+}
+#loginForm {
+    /* flex: 1;
+    display: none; */
+    margin-left: -24rem;
+    margin-right: 38 rem;
+    padding-right: 26rem;
+}
+h3 {
+    font-weight: bolder;
+  }
+  .form-control {
+    border: 1px solid;
+  }
