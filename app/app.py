@@ -1,7 +1,7 @@
 from flask import Flask
 from client.routes.auth_routes import auth 
 from client.routes.public_routes import public 
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 

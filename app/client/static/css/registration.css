@@ -2,7 +2,7 @@
     max-width: 900px;
 }
 .welcome-section {
-    background-color: #4a90e2;
+    background-color: #ff3500;
     color: white;
     text-align: center;
     padding: 50px 20px;
@@ -26,13 +26,13 @@
 }
 .btn-primary {
     width: 100%;
-    background-color: #4a90e2;
+    background-color: #ff3500;
 }
 .form-footer {
     text-align: center;
     margin-top: 20px;
 }
 .form-footer a {
-    color: #4a90e2;
+    color: #ff3500;
     text-decoration: none;
 }
