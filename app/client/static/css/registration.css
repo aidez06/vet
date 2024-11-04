@@ -1,38 +1,45 @@
-.container {
-    max-width: 900px;
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
 }
-.welcome-section {
-    background-color: #ff3500;
+
+.modal-body {
+    padding: 0;
+}
+
+.bg-danger {
+    background-color: #ff2c0b !important; 
     color: white;
-    text-align: center;
-    padding: 50px 20px;
 }
-.welcome-section h1 {
-    font-size: 2rem;
+
+.btn-close {
+    margin-top: -10px;
+    margin-right: -10px;
 }
-.welcome-section img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+
+h3 {
+    font-weight: bold;
+    color: #333;
 }
-.form-section {
-    padding: 50px 30px;
+
+.text-primary {
+    color: #007bff !important;
 }
-.form-section h2 {
-    color: #6d4c41;
+
+.img-fluid {
+    max-width: 80%;
 }
-.form-control {
-    margin-bottom: 15px;
+#signupModal {
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
-.btn-primary {
-    width: 100%;
-    background-color: #ff3500;
+
+.modal-backdrop {
+    opacity: 0.5 !important; /* Adjust the backdrop opacity as needed */
+    z-index: 1040 !important;
 }
-.form-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-.form-footer a {
-    color: #ff3500;
-    text-decoration: none;
+
+#signupModal .modal-content {
+    z-index: 1050 !important;
+    pointer-events: auto;
 }
