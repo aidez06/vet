@@ -2,83 +2,6 @@
 
 
 {% block content %}
-    <header>
-        <div class="header-area ">
-            <div class="header-top_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-8">
-                            <div class="short_contact_list">
-                                <ul>
-                                    <li><a href="#">+880 4664 216</a></li>
-                                    <li><a href="#">Mon - Sat 10:00 - 7:00</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-4 ">
-                            <div class="social_media_links">
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-pinterest-p"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo">
-                                <a href="index.html">
-                                  
-
-                                    <img style="width: 60px; height: 60px;" src="{{url_for('public.static',filename='img/public/logo.png')}}" alt="" >
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a  href="index.html">home</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                                
-                                            </ul>
-                                        </li>
-                                        <li><a href="service.html">services</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider slider_bg_1 d-flex align-items-center">
@@ -361,60 +284,73 @@
             </div>
         </div>
     </div>
-    <!--Registration  Modal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body d-flex p-0">
-                    
-                    <!-- Left side with image and welcome text -->
-                    <div class="col-md-5 d-flex flex-column align-items-center justify-content-center bg-danger text-white p-4">
-                        <h3 class="mb-4">Welcome</h3>
-                        
-                        <img src="{{url_for('public.static',filename='img/registration_cover.png')}}" alt="Vet and pets illustration" class="img-fluid">
-                    </div>
-                    
-                    <!-- Right side with form -->
-                    <div class="col-md-7 p-4">
-                        <button type="button" class="btn-close float-end" data-dismiss="modal" aria-label="Close"></button>
-                        <h3 class="modal-title mb-4 text-center" id="signupModalLabel">Create Account</h3>
-                        
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name" required id="firstName">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name" required id="lastName">
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <input type="email" class="form-control" placeholder="Email Address" required id="email">
-                            </div>
-                            <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Username" required id="username">
-                            </div>
-                            <div class="mt-3">
-                                <input type="password" class="form-control" placeholder="Password" required id="password">
-                            </div>
-                            <div class="mt-3">
-                                <input type="tel" class="form-control" placeholder="Contact Number" required id="contactNumber">
-                            </div>
-                            <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-primary">Create Account</button>
-                            </div>
-                        </form>
-                        
-                        <div class="text-center mt-3">
-                            <span>Already have an account? <a href="#" class="text-primary">Login</a></span>
+<!-- Registration/Login Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content position-relative">
+
+            <div class="welcome-container">
+                <h2>Welcome</h2>
+                <img src="{{url_for('public.static',filename='img/registration_cover.png')}}" alt="Welcome Image" class="img-fluid mb-4">
+            </div>
+            <div class="modal-body d-flex p-0">
+
+                <!-- Login Form -->
+                <div class="col-md-6 p-4 border-end position-relative" style="overflow: hidden;">
+                    <button type="button" class="btn-close position-absolute start-0 ms-3" data-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title mb-4 text-center login-h3">Login</h3>
+                    <form class="login-form">
+                        <div class="mt-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
                         </div>
+                        <div class="mt-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <span>Don’t have an account? <a href="#" class="text-primary" id="toggleToSignup">Sign Up</a></span>
                     </div>
-                    
                 </div>
+
+                <!-- Sign Up Form -->
+                <div class="col-md-6 p-4 position-relative">
+                    <button type="button" class="btn-close position-absolute end-0 me-3" data-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title mb-4 text-center">Create Account</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="tel" class="form-control" placeholder="Contact Number" required>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <span>Already have an account? <a href="#" class="text-primary" id="toggleToLogin">Login</a></span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
- 
-
-
+</div>
 {% endblock %}

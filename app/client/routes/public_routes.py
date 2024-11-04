@@ -13,4 +13,13 @@ def home():
 @public.route('/about')
 def about():
     return render_template('/public/about.html')
+@public.route('/contact')
+def contact():
+    return render_template('/public/contact.html')
+@public.route('/service')
+def service():
+    return render_template('/public/service.html')
+
+
+
 

@@ -1,56 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="{{url_for('auth.static',filename='css/registration.css')}}" rel="stylesheet">
-</head>
-<body>
-    <div class="container my-5 shadow-lg">
-        <div class="row">
-            <!-- Left Section -->
-            <div class="col-md-6 welcome-section">
-                <h1>Welcome</h1>
-                <img src="{{ url_for('auth.static', filename='img/registration_cover.png') }}" alt="Veterinarian and pets">
 
+<div class="container my-5 shadow-lg">
+    <div class="row">
+        <!-- Left Section -->
+        <div class="col-md-6 welcome-section">
+            <h1>Welcome</h1>
+            <img src="{{ url_for('auth.static', filename='img/registration_cover.png') }}" alt="Veterinarian and pets">
+
+        </div>
+
+        <!-- Right Section (Form) -->
+
+        <div class="col-md-6 form-section">
+            <div class="row">
+                <a class="navbar-brand d-flex justify-content-end" href="#">
+                    <img src="{{ url_for('auth.static',filename='img/public/logo.png') }}" alt="Logo" class="img-fluid" style="max-height: 60px;">
+                </a>
             </div>
-    
-            <!-- Right Section (Form) -->
 
-            <div class="col-md-6 form-section">
+            <h2>Create Account</h2>
+            <form>
                 <div class="row">
-                    <a class="navbar-brand d-flex justify-content-end" href="#">
-                        <img src="{{ url_for('auth.static',filename='img/public/logo.png') }}" alt="Logo" class="img-fluid" style="max-height: 60px;">
-                    </a>
-                </div>
-
-                <h2>Create Account</h2>
-                <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="First Name">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Last Name">
-                        </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="First Name">
                     </div>
-                    <input type="email" class="form-control" placeholder="Email Address">
-                    <input type="text" class="form-control" placeholder="Username">
-                    <input type="password" class="form-control" placeholder="Password">
-                    <input type="tel" class="form-control" placeholder="Contact Number">
-                    <button type="submit" class="btn btn-primary mt-3">Create Account</button>
-                </form>
-                <div class="form-footer">
-                    <p>Already have an account? <a href="#">Login</a></p>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
                 </div>
+                <input type="email" class="form-control" placeholder="Email Address">
+                <input type="text" class="form-control" placeholder="Username">
+                <input type="password" class="form-control" placeholder="Password">
+                <input type="tel" class="form-control" placeholder="Contact Number">
+                <button type="submit" class="btn btn-primary mt-3">Create Account</button>
+            </form>
+            <div class="form-footer">
+                <p>Already have an account? <a href="#">Login</a></p>
             </div>
         </div>
     </div>
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
