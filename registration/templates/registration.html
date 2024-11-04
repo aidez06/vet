@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/resgistration.css">
+    <link href="..\static\css\resgistration.css"  rel="stylesheet">
 </head>
 <body>
 
@@ -19,72 +19,66 @@
 <!-- Registration/Login Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content flip-container">
+        <div class="modal-content position-relative">
+
+            <div class="welcome-container">
+                <h2>Welcome</h2>
+                <img src="..\static\img\registration_cover.png" alt="Welcome Image" class="img-fluid mb-4">
+            </div>
+
             <div class="modal-body d-flex p-0">
-                
-                <!-- Welcome/Image Section -->
-                <div class="col-md-5 welcome-section d-flex flex-column align-items-center justify-content-center p-4">
-                    <div class="welcome-text"> 
-                        <h3 class="mb-4" id="welcomeText">Welcome</h3>
+
+                <!-- Login Form -->
+                <div class="col-md-6 p-4 border-end position-relative" style="overflow: hidden;">
+                    <button type="button" class="btn-close position-absolute start-0 ms-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title mb-4 text-center login-h3">Login</h3>
+                    <form class="login-form">
+                        <div class="mt-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <span>Don’t have an account? <a href="#" class="text-primary" id="toggleToSignup">Sign Up</a></span>
                     </div>
-                    <img src="../static/img/registration_cover.png" alt="Vet and pets illustration" class="img-fluid">
                 </div>
 
-                <!-- Form Section -->
-                <div class="col-md-7 form-section p-4 position-relative">
-                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-                    
-                    <!-- Sign Up Form -->
-                    <div id="signupForm">
-                        <h3 class="modal-title mb-4 text-center">Create Account</h3>
-                        <form>
-                            <!-- Sign-up form inputs -->
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name" required>
-                                </div>
+                <!-- Sign Up Form -->
+                <div class="col-md-6 p-4 position-relative">
+                    <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title mb-4 text-center">Create Account</h3>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name" required>
                             </div>
-                            <div class="mt-3">
-                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
                             </div>
-                            <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Username" required>
-                            </div>
-                            <div class="mt-3">
-                                <input type="password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <div class="mt-3">
-                                <input type="tel" class="form-control" placeholder="Contact Number" required>
-                            </div>
-                            <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-primary">Create Account</button>
-                            </div>
-                        </form>
-                        <div class="text-center mt-3">
-                            <span>Already have an account? <a href="#" class="text-primary" id="toggleToLogin">Login</a></span>
                         </div>
-                    </div>
-
-                    <!-- Login Form -->
-                    <div id="loginForm" class="d-none">
-                        <h3 class="modal-title mb-4 text-center">Login</h3>
-                        <form class="login-form">
-                            <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Username" required>
-                            </div>
-                            <div class="mt-3">
-                                <input type="password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-primary">Login</button>
-                            </div>
-                        </form>
-                        <div class="text-center mt-3">
-                            <span>Don’t have an account? <a href="#" class="text-primary" id="toggleToSignup">Sign Up</a></span>
+                        <div class="mt-3">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
                         </div>
+                        <div class="mt-3">
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="mt-3">
+                            <input type="tel" class="form-control" placeholder="Contact Number" required>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <span>Already have an account? <a href="#" class="text-primary" id="toggleToLogin">Login</a></span>
                     </div>
                 </div>
 
@@ -95,5 +89,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../static/js/registration.js"></script>
+
 </body>
 </html>
