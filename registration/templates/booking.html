@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinary Clinic Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="..." class="img-fluid logo" alt="image">
+        <hr>
+        <ul class="list-unstyled">
+            <li><a href="#"><img src="..." class="img-fluid sidebar-icon" alt="image"></a></li>
+            <li><a href="#"><img src="..." class="img-fluid sidebar-icon" alt="image"></a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <span class="navbar-brand">VETERINARY CLINIC</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link notif" href="..\templates\booking.html">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="..\static\img\profile-user.png" class="img-fluid profile-icon" alt="profile"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- COntent -->
+    <div class="container-fluid content">
+        <div class="row no-gutters">
+            <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                <h1>Need Consultation?</h1>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookingModal">Book Now</button>
+            </div>
+            <div class="col-6 p-0">
+                <div id="map">
+                    <img src="..\static\img\doctor.png" class="img-fluid doctor-icon" alt="profile">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookingModalLabel">Appointment Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter Fullname">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter Number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="petName">Pet Name</label>
+                                <input type="text" class="form-control" id="petName" placeholder="Enter Pet Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="petType">Pet Type</label>
+                                <select id="petType" class="form-control">
+                                    <option selected disabled value="">Select Pet Type</option>
+                                    <option>Cat</option>
+                                    <option>Dog</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="breed">Breed</label>
+                                <input type="text" class="form-control" id="breed" placeholder="Enter Pet Breed">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" placeholder="Enter Pet Age">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="gender">Gender</label>
+                                <input type="text" class="form-control" id="gender" placeholder="Enter Pet Gender">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="service">Service</label>
+                                <select id="service" class="form-control">
+                                    <option selected disabled value="">Select Pet Service</option>
+                                    <option>Bathing</option>
+                                    <option>Checkup</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="customService">Custom Service</label>
+                                <input type="text" class="form-control" id="customService" placeholder="Enter Custom Service">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="appointmentDate">Appointment Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" placeholder="Select Date">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="appointmentTime">Appointment Time</label>
+                                <input type="time" class="form-control" id="appointmentTime" placeholder="Select Time">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="additionalNotes">Additional Notes</label>
+                                <input type="text" class="form-control" id="additionalnotes" placeholder="add Notes">
+
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary appoint-btn mx-auto d-block mt-4">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
