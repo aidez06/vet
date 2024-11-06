@@ -20,6 +20,9 @@ def contact():
 def service():
     return render_template('/public/service.html')
 
+@public.route('/booking')
+def booking():
+    return render_template('/public/booking.html')
 
 
 
