@@ -44,7 +44,7 @@
         <div class="modal-content px-4 py-2">
             <div class="modal-body">
                 <h4 class="mt-3">Appointment Details</h4>
-                <form>
+                <form id="appointmentForm">
                     <div class="form-group mt-2">
                         <div class="row mb-2">
                             <div class="col">
@@ -224,5 +224,49 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#appointmentForm').on('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                let formData = {
+                pet_name: $('#pet_name').val(),
+                pet_gender: $('#pet_gender').val(),
+                pet_service: $('#pet_service').val(),
+                custom_service: $('#custom_service').val(),
+                pet_type: $('#pet_type').val(),
+                appointment_date: $('#appointment_date').val(),
+                appointment_time: $('#appointment_time').val(),
+                breed: $('#breed').val(),
+                pet_age: $('#pet_age').val(),
+                notes: $('#notes').val()
+            };
+
+    
+                // AJAX request to submit form data
+                $.ajax({
+                    url: '/book_appointment',  // Flask route
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),  // Convert form data to JSON
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            alert(response.message); // Show success message
+                            $('#bookingModal').modal('hide'); // Close the modal
+                            $('#appointmentForm')[0].reset(); // Clear the form
+                        } else {
+                            alert(response.message); // Show error message
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error:", error);
+                        alert("There was an error booking the appointment. Please try again.");
+                    }
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

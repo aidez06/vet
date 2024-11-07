@@ -70,3 +70,4 @@ class Appoint(db.Model):
     appointment_date = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.String(50), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+    notes = db.Column(db.Text)  # Add this line to include a notes column
