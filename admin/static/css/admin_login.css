@@ -1,0 +1,56 @@
+/* Entire Login Page */
+.admin-login {
+    height: 100vh; 
+    margin: 0; 
+    background-color: #4991C9;
+}
+
+.clinic-photo h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.clinic-photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.clinic-photo img {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+}
+
+.admin-credentials {
+    background-color: #fff;
+    height: 100vh;
+    margin: 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form-floating label {
+    left: 10px;
+    top: -10px;
+    padding: 0 5px;
+    background-color: #fff;
+    font-size: 14px;
+    transform: translate(0, 0);
+}
+
+.form-floating input:focus {
+    border-color: #007bff;
+    box-shadow: none;
+}
