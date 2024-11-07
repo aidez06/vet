@@ -294,18 +294,19 @@
                 <img src="{{url_for('public.static',filename='img/registration_cover.png')}}" alt="Welcome Image" class="img-fluid mb-4">
             </div>
             <div class="modal-body d-flex p-0">
-                <div id="loginMessage"></div>
+                
 
                 <!-- Login Form -->
                 <div class="col-md-6 p-4 border-end position-relative" style="overflow: hidden;">
+                    <div id="loginMessage"></div>
                     <button type="button" class="btn-close position-absolute start-0 ms-3" data-dismiss="modal" aria-label="Close"></button>
                     <h3 class="modal-title mb-4 text-center login-h3">Login</h3>
-                    <form class="login-form">
+                    <form class="login-form" action="{{url_for('auth.login')}}" id="loginForm">
                         <div class="mt-3">
-                            <input type="text" class="form-control" placeholder="Username" required>
+                            <input name="usernameLogin"type="text" class="form-control" placeholder="Username" required>
                         </div>
                         <div class="mt-3">
-                            <input type="password" class="form-control" placeholder="Password" required>
+                            <input name="pwdLogin"type="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="d-grid mt-4">
                             <button type="submit" class="btn btn-primary">Login</button>

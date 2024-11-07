@@ -140,3 +140,41 @@ img.doctor-icon {
             padding: 1rem;
             padding-top: 0;
         }       
+
+        input.form-control, select.form-control {
+            background-color: #E2E2E2;
+        }
+        
+        select.form-control {
+            color: #6a6a6a;
+        }
+        
+        label {
+            font-size: small;
+        }
+        
+        .modal-body h4 {
+            color: #F13F15;
+        }
+        .button {
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 5px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+          }
+        
+        .book-btn {
+            background-color: #F13F15;
+            color: #fff;
+        }
+        
+        .book-btn:hover {
+            background-color: #ca492c;
+            color: #fff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }

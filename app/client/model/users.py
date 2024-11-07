@@ -11,7 +11,7 @@ class Client(db.Model):
     email = db.Column(db.String(100), unique=True) 
     contact_num = db.Column(db.String(20))
     uname = db.Column(db.String(50), nullable=False, unique=True)  # Ensure uniqueness
-    pword = db.Column(db.String(255), nullable=False)
+    pword = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
 
     # Relationship to pets and appointments
@@ -19,14 +19,20 @@ class Client(db.Model):
     appointments = db.relationship('Appoint', backref='client', lazy=True)
 
     def set_password(self, password):
-        print(password)
+        print("Password input:", password)
+
         if password is not None:
             self.pword = generate_password_hash(password)
+            print(self.pword)
         else:
             raise ValueError("Password cannot be None")
 
     def check_password(self, password):
-        return check_password_hash(self.pword, password)
+        print("Stored hash:", self.pword)
+        print("Password input:", password)
+        validate_password = check_password_hash(self.pword, password)
+        print(validate_password)
+        return validate_password
 
 class Pet(db.Model):
     __tablename__ = 'pet'

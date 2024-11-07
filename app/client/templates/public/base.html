@@ -15,7 +15,6 @@
 
     <!-- Auth Registration CSS -->
     <link href="{{ url_for('auth.static', filename='css/registration.css') }}" rel="stylesheet">
-    <link href="{{ url_for('auth.static', filename='css/booking.css') }}" rel="stylesheet">
 
     <!-- Public CSS -->
     <link rel="stylesheet" href="{{ url_for('public.static', filename='css/public/bootstrap.min.css') }}">
@@ -304,21 +303,38 @@
         $(document).ready(function () {
             $('#loginForm').on('submit', function (e) {
                 e.preventDefault();  // Prevent traditional form submission
-    
+
                 $.ajax({
                     type: 'POST',
                     url: '/auth/login',  // Login endpoint
                     data: $(this).serialize(),  // Serialize form data
+                    success: function (response) {
+                        // Check if a redirect URL was provided in the response
+                        if (response.redirect) {
+                            // Redirect the browser to the new URL
+                            window.location.href = response.redirect;
+                        } else {
+                            // Display a success message if no redirect URL was provided
+                            $('#loginMessage').html('<div class="alert alert-success">' + response.message + '</div>');
+                        }
+                    },
                     error: function (xhr) {
-                        // Display error message
-                        let response = JSON.parse(xhr.responseText);
-                        $('#loginMessage').html('<div class="alert alert-danger">' + response.message + '</div>');
+                        if (xhr.status === 404) {
+                            // Specific handling for 404 status
+                            let response = JSON.parse(xhr.responseText);
+                            $('#loginMessage').html('<div class="alert alert-danger">' + response.message + '</div>');
+                        } else {
+                            // Generic error handling for other statuses
+                            $('#loginMessage').html('<div class="alert alert-danger">An error occurred. Please try again.</div>');
+                        }
                     }
                 });
             });
         });
     </script>
-    
+
+
+        
 
 </body>
 </html>
