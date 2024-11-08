@@ -122,12 +122,11 @@ span.inventory-sidebar {
     color: #911d1d;
 }
 
-/* Content Responsive*/
+/* Content */
 @media (min-width: 768px) {
     .container, .container-md, .container-sm {
         /* max-width: 720px; */
         margin-left: 10px;
-        padding-right: 30px;
     }
 }
 
@@ -138,105 +137,119 @@ span.inventory-sidebar {
     }
 }
 
-@media (max-width: 400px) {
-    .card-head h5 {
-        font-size: 1rem;
-    }
 
-    .list-group {
-        font-size: 1rem;
-    }
-
-    .list-group-item {
-        font-size: 1rem;
-        padding: 0rem;
-        margin: 0rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .list-group-item img {
-        width: 5px;
-        height: 5px;
-    }
+/*Product Table*/
+select.form-select.form-select-sm {
+    width:25%;
+    border: None;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-/* Dashboard */
-.card-body hr {
-    border: 1px solid #000;
+a.page-link {
+    color: black;
+    font-size: 12px;
 }
 
-.bg-main-color {
-    background-color: #4991C9;
+input.form-control.rounded {
+    width: 110px;
+    height:25px;
+    border: None;
+    padding-left: 0;
+}
+select#product-quality, #product-price {
+    font-size: 12px;
+    width:50%;
+    color: #7d7777;
+    font-weight: lighter;
 }
 
-.bg-main-color-btn {
-    background-color: #4991C9;
-    color: #fff;
+th#action {
+    padding-bottom: 33px;
 }
 
-.bg-main-color-btn:hover {
-    background-color: #226598;
-    color: #fff;
+option {
+    font-size: 12px;
 }
 
-div.card.bg-main-color {
+a#action-btn {
     border: none;
+    background: none;
 }
 
-.form-select {
-    color: #fff;
-    background-color: #000;
+#action-btn:active {
+    background-color: initial; 
+    border-color: initial;    
+    box-shadow: none;         
+  }
+
+#action-btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+#action-btn img {
+    width: 24px;
+    height: 24px; 
+  }
+
+img.action-img {
+    width: 24px;
+}
+
+
+
+a.action-btns {
+    flex: 1 1 auto;
+    padding: 0;
     border: none;
+    width: 0;
 }
 
-#myChartContainer {
-    position: relative;
-    width: 100%; 
-    height: 300px; 
+.card {
+    flex-direction: row
 }
 
-#myChart {
-    width: 100% !important; 
-    height: auto !important;
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0;
+    width: 0;
+    border: None;
 }
 
-.list-group {
-    --bs-list-group-bg: none;
-    --bs-list-group-border-color: none;
-    --bs-list-group-color: #fff;
+div.page-number-prd {
+    flex-direction: row
 }
 
-.list-group-item img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.pagination {
+    margin-bottom: 0;
 }
 
-td img {
-    width: 50px;
-    height: 50px; 
-    border-radius: 50%; 
-    object-fit: cover;
-}
-/*Table */
-   /* Ensures the text is readable */
-   .table {
-    color: black; /* Set the text color to black */
+
+#rows-page-label {
+    font: 14px;
 }
 
-/* Style for the table rows to appear clickable */
-.table-hover tbody tr {
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.3s; /* Smooth background transition */
+label#rows-page {
+    font-size: 14px;
+    padding-right: 10px;
 }
 
-/* Change the background color on focus */
-.table-hover tbody tr:focus {
-    background-color: #f0f0f0; /* Light gray for focus state */
+#pageDropdown {
+    margin-left: auto;
+    font-size: 14px;
+    padding: 4px 7px;
 }
 
-/* Optionally, style for hover effect */
-.table-hover tbody tr:hover {
-    background-color: #e9ecef; /* Change background color on hover */
+
+/*Sales Table*/
+select#sales-list-opt {
+    margin-bottom: 38px;
 }
