@@ -1,0 +1,571 @@
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 200px;
+    background-color: #f8f9fa;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+    transition: width 0.3s;
+    overflow-y: auto;
+}
+
+.sidebar.minimized {
+    width: 70px;
+}
+
+.nav-link {
+    color: #333;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-link i {
+    width: 10px;
+}
+
+.nav-link span {
+    font-size: 15px;
+    width: 120px;
+    position: absolute;
+    left: 50px;
+    transition: opacity 0.3s;
+}
+
+.sidebar.minimized .nav-link span,
+.sidebar.minimized .inventory-sidebar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+span.inventory-sidebar {
+    font-size: 15px;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 9px;
+}
+
+.content {
+    margin-left: 200px;
+    transition: margin-left 0.3s;
+    overflow-y: auto;
+    height: calc(100vh - 20px);
+}
+
+.content.minimized {
+    margin-left: 80px;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 210px;
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: left 0.3s;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.user-profile img {
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.small-text {
+    font-size: x-small;
+}
+
+#collapseExample span {
+    font-size: small;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar-divider {
+    border: none;
+    height: 0.5px;
+    background-color: #000;
+    margin: 10px 0;
+    margin-left: 15px;
+    width: 75%;
+}
+
+.logout {
+    color: #d70c0c;
+}
+
+.logout:hover {
+    color: #911d1d;
+}
+
+/* Content Responsive*/
+@media (min-width: 768px) {
+    .container, .container-md, .container-sm {
+        /* max-width: 720px; */
+        margin-left: 10px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 576px) {
+    .container, .container-sm {
+        /* max-width: 540px; */
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-head h5 {
+        font-size: 1rem;
+    }
+
+    .list-group {
+        font-size: 1rem;
+    }
+
+    .list-group-item {
+        font-size: 1rem;
+        padding: 0rem;
+        margin: 0rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .list-group-item img {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+/* Dashboard */
+.card-body hr {
+    border: 1px solid #000;
+}
+
+.bg-main-color {
+    background-color: #4991C9;
+}
+
+.bg-main-color-btn {
+    background-color: #4991C9;
+    color: #fff;
+}
+
+.bg-main-color-btn:hover {
+    background-color: #226598;
+    color: #fff;
+}
+
+div.card.bg-main-color {
+    border: none;
+}
+
+.form-select {
+    color: #fff;
+    background-color: #000;
+    border: none;
+}
+
+#myChartContainer {
+    position: relative;
+    width: 100%; 
+    height: 300px; 
+}
+
+#myChart {
+    width: 100% !important; 
+    height: auto !important;
+}
+
+.list-group {
+    --bs-list-group-bg: none;
+    --bs-list-group-border-color: none;
+    --bs-list-group-color: #fff;
+}
+
+.list-group-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+td img {
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.table {
+    --bs-table-color: #fff;
+    --bs-table-bg: none;
+    --bs-table-border-color: #000;
+}
+
+td {
+    align-content: center;
+}
+
+.summary-body i {
+        background-color: #000;
+        color: #4991C9;
+        padding: 5px 10px 5px 10px;
+        border-radius: 6px;
+}
+
+/* Appointments Calendar */
+#calendar-container {
+    width: 80%; /* Adjust the width percentage as needed */
+    margin: 0 auto; /* Center the calendar */
+}
+#calendar {
+    max-width: 100%; /* Ensure it doesn't exceed its container */
+    height: 600px; /* Adjust the height */
+}
+
+/* Calendar container size */
+#calendar-container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#calendar {
+    max-width: 100%;
+    height: 75vh;
+}
+
+/* Minimalist styling */
+.fc-toolbar {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Calendar header (day names, navigation) */
+.fc-header-toolbar {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* Remove text underline */
+.fc-daygrid-day-number,
+.fc-event-title {
+    text-decoration: none !important;
+}
+
+.fc-col-header-cell-cushion {
+    text-decoration: none;
+    color: #000;
+}
+
+.fc-toolbar-title {
+    font-weight: bold;
+}
+
+/* Minimalist event styling */
+.fc-event {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+/* Day numbers styling */
+.fc-daygrid-day-number {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Remove borders and grid lines */
+.fc-daygrid-cell {
+    border: none;
+}
+
+/* Table cell hover effect */
+.fc-daygrid-day:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hide week numbers and other unnecessary elements */
+.fc-daygrid-week-number,
+.fc-col-header-cell-cushion {
+    display: none;
+}
+
+/* Event appearance */
+.fc-event {
+    background-color: #4991C9; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.fc-daygrid-event.fc-daygrid-dot-event.fc-event.fc-event-start.fc-event-end.fc-event-future {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+/* Make event title and time more prominent */
+.fc-time, .fc-title {
+    font-weight: bold;
+}
+
+
+/* Hover effect on day cells */
+.fc-daygrid-day:hover {
+    background-color: #f0f0f0;
+}
+
+/* Minimalist font */
+body, .fc {
+    font-family: 'Arial', sans-serif;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #4991C9;
+}
+
+/* Manage Appointments */
+.table>:not(caption)>*>* {
+    color: #000;
+}
+
+span.appointment-status-pending {
+    border: 2px solid #f5b026;
+    border-radius: 10px;
+    padding: 5px;
+    color: #dc9c1c;
+    font-size: small;
+}
+
+span.appointment-status-confirmed {
+    border: 2px solid #248829;
+    border-radius: 10px;
+    padding: 5px;
+    color: #248829;
+    font-size: small;
+}
+
+span.appointment-status-canceled {
+    border: 2px solid #f52626;
+    border-radius: 10px;
+    padding: 5px;
+    color: #dc1c1c;
+    font-size: small;
+}
+
+span.appointment-service {
+    border: 2px solid #909090;
+    border-radius: 10px;
+    padding: 5px;
+    color: #777777;
+}
+
+select.form-select.rows {
+    background-color: transparent;
+    width: auto;
+    border-radius: 0px;
+    border: 1px solid #c0c0c0;
+    color: #484848;
+}
+
+.page-item a {
+    color: #000;
+}
+
+select.form-select.form-select-sm {
+    width: auto;
+    background-color: transparent;
+    color: #5e5e5e;
+    border: 1px solid #dcdcdc;
+}
+
+input.form-control.form-control-sm {
+    width: auto;
+}
+
+th.float-start {
+    border: transparent;
+}
+
+.manage-appointment div.table-responsive table{
+    border-color: #bababa;
+}
+
+.manage-appointment div.table-responsive table.table tbody.table-group-divider{
+    border-color: #a4a4a4;
+}
+
+/* Manage Appointment Responsive */
+/* Reduce padding and font size for smaller screens */
+@media screen and (max-width: 768px) {
+    .container.manage-appointment {
+        padding: 10px;
+    }
+
+    .breadcrumb {
+        font-size: 12px;
+    }
+
+    .breadcrumb-item a {
+        font-size: 12px;
+    }
+
+    .table-responsive {
+        font-size: 12px;
+    }
+
+    .table th, .table td {
+        padding: 5px;
+    }
+
+    .table input.form-control, .table select.form-select {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .page-rows {
+        font-size: 12px;
+    }
+
+    .pagination .page-item .page-link {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .rows {
+        font-size: 12px;
+    }
+
+    .btn, .form-control, .form-select {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .d-grid .btn-primary, .d-md-flex .btn-primary {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Adjust button sizes */
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 12px;
+        width: 1rem;
+    }
+
+    .app-appointment-form h3 {
+        font-size: 18px;
+    }
+
+    .form-control, .form-select {
+        font-size: 12px;
+    }
+
+    .d-grid .btn, .d-md-flex .btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* Add Appoinment */
+.form-select.add-appointment {
+    background-color: transparent;
+    color: #505050;
+    border: 1px solid #dbdbdb;
+}
+
+.app-appointment-form {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+/* Manage Users */
+.manage-users-container div.table-responsive table.table tbody{
+    border-color: #a4a4a4;
+    background-color: #ebebeb;
+}
+
+.manage-users-container img{
+    width: 35px;
+    height: 35px;
+}
+
+select.form-select.form-select-sm.permissions {
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+select.form-select.form-select-sm.permissions option {
+    color: #000;
+}
+
+span.permissions-admin-role {
+    background-color: #d73636;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+span.permissions-staff-role {
+    background-color: #47bb7b;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+span.permissions-vet-role {
+    background-color: #b2b2b2;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+span.permissions-cashier-role {
+    background-color: #e4993d;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.app-new-user-form {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+
+/* Manage Clients */
+.manage-clients-container div.table-responsive table{
+    border: 1px solid #a2a2a2;
+}

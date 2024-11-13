@@ -16,96 +16,86 @@
       <nav class="nav flex-column">
           <!-- Profile Section -->
           <a class="nav-link user-profile" href="#">
-              <img src="../static/images/pug-profile.jpg" alt="profile">
-              <span>
-                  <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
-                  <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
-              </span>
-          </a>
-          <hr class="sidebar-divider">
+            <img src="../static/images/pug-profile.jpg" alt="profile">
+            <span>
+                <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
+                <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
+            </span>
+        </a>
+        <hr class="sidebar-divider">
 
-          <!-- Main Navigation -->
-          <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
-          <a class="nav-link" href="admin_dashboard.html"><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
-          <a class="nav-link" href="pos.html"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
-          <a class="nav-link" href="admin_appointment.html"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
+        <!-- Main Navigation -->
+        <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
+        <a class="nav-link" href="admin_dashboard.html"><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="pos.html"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
+        <a class="nav-link" href="add_appointment.html"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
 
-          <!-- Inventory Section -->
-          <p class="d-inline-flex gap-1 mb-0 align-items-center">
-              <a class="btn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
-                  <i class="bi bi-bar-chart fs-5"></i>
-                  <span class="inventory-sidebar ms-2">Inventory<i class="bi bi-caret-down-fill"></i></span>
-              </a>
-          </p>
-          <div class="collapse show" id="collapseExample">
-              <a class="nav-link text-primary d-flex align-items-center mb-3" href="sales-table.html"><span>&emsp;Sales</span></a>
-              <a class="nav-link d-flex align-items-center mb-3" href="product-table.html"><span>&emsp;Product</span></a>
-              <a class="nav-link d-flex align-items-center mb-3" href="supplier_table.html"><span>&emsp;Suppliers</span></a>
-          </div>
+        <!-- Inventory Section -->
+        <p class="d-inline-flex gap-1 mb-0 align-items-center">
+            <a class="btn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+                <i class="bi bi-bar-chart fs-5"></i>
+                <span class="inventory-sidebar ms-2">Inventory<i class="bi bi-caret-down-fill"></i></span>
+            </a>
+        </p>
+        <div class="collapse show" id="collapseExample">
+            <a class="nav-link d-flex align-items-center mb-3" href="sales-table.html"><span>&emsp;Sales</span></a>
+            <a class="nav-link d-flex align-items-center mb-3" href="product-table.html"><span>&emsp;Product</span></a>
+            <a class="nav-link text-primary d-flex align-items-center mb-3" href="#"><span>&emsp;Suppliers</span></a>
+        </div>
 
-          <a class="nav-link" href="manage_users.html"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
-          <a class="nav-link" href="manage_clients.html"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
+        <a class="nav-link" href="manage_users.html"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
+        <a class="nav-link" href="manage_clients.html"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
 
-          <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
 
-          <!-- Settings Section -->
-          <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
-          <a class="nav-link logout" href="#"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
+        <!-- Settings Section -->
+        <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
+        <a class="nav-link logout" href="admin_login.html"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
         </nav>
     </div>
 
     <div class="content w-100" id="content">
       <main class="container me-0 w-100 p-5">
         <!--Select Inventory Managent-->
-        <select class="form-select form-select-sm" id="sales-list-opt" aria-label=".form-select-sm example">
-            <option selected>SALES LIST</option>
-            <option value="1"><a href="{{ url_for('main_routes.admin_inventory') }}">Sales</a></option>
-            <option value="2"><a href="{{ url_for('main_routes.supplier_table') }}">Product</a></option>
-            <option value="3"><a href="{{ url_for('main_routes.supplier_table') }}">Supplier</a></option>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected>SUPPLIER LIST</option>
+            <option value="1"><a href="..\templates\admin-inventory-module.html">Sales</a></option>
+            <option value="2"><a href="..\templates\supplier-table.html">Product</a></option>
+            <option value="3"><a href="..\templates\supplier-table.html">Supplier</a></option>
         </select>
 
-        <!--Sales List Table-->
-          <table class="table table-hover sale-table">
+        <!--Add Supplier button-->
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-primary" href="#" role="button">Add Supplier</a>
+        </div>
+
+        <!--Supplier List Table-->
+          <table class="table table-hover">
             <thead>
 
-              <!--Sales ID-->
+            <!--Supplier Name-->
               <tr>
                 <th scope="col"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-                <th scope="col">Sales ID
+                <th scope="col">Supplier Name
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                 </th>
 
-                <!--Quality sold-->
-                <th scope="col">Quality Sold
-                    <select class="form-select form-select-sm" id="product-price" aria-label=".form-select-sm example">
-                        <option selected>All</option>
-                        <option value="" href="#">3.40</option>
-                        <option value="2" href="#">90.0</option>
-                        <option value="3" href="#">12.0</option>
-                    </select>
-                </th>
-
-                <!--Total-->
-                <th scope="col">Total
-                    <select class="form-select form-select-sm" id="product-quality" aria-label=".form-select-sm example">
-                        <option class="option-inventory" selected>All</option>
-                        <option value="12" class="option-inventory" href="#">12</option>
-                        <option value="2" class="option-inventory" href="#">11</option>
-                        <option value="3" class="option-inventory" href="#">33</option>
-                    </select>
-                </th>
-
-                <!--Date-->
-                <th scope="col">Date
+            <!--Email Address-->
+                <th scope="col">Email address
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                 </th>
 
-                <!--Staff-->
-                <th scope="col">Staff
+            <!--Contact Number-->
+                <th scope="col">Contact Number
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                 </th>
 
-                <!--Action-->
+            <!--Address-->
+                <th scope="col">Address
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                </th>
+            
+            <!--Action-->
                 <th scope="col" id="action">Action</th>
               </tr>
             </thead>
@@ -114,17 +104,16 @@
             <tbody>
               <tr>
                 <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-                <td>SID123451</td>
-                <td>12</td>
-                <td>1,200</td>
-                <td>October 1, 2024</td>
                 <td>Alice Gou</td>
-
-                <!--Action-->
+                <td>sample@gmail.com</td>
+                <td>09234324242</td>
+                <td>Santa Rosa, Laguna</td>
                 <td> 
                   <a class="btn btn-primary action-btns" id="action-btn-1" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
                     <img src="..\static\images\more_horiz_24dp_666666.png" class="action-img" alt="action">
                   </a>
+
+                  <!--Action-->
                   <div class="collapse" id="collapseExample1">
                     <div class="card card-body">
                       <a href="url">
@@ -140,11 +129,10 @@
             
               <tr>
                 <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-                <td>SID123452</td>
-                <td>12</td>
-                <td>1,200</td>
-                <td>October 1, 2024</td>
-                <td>Alice Gou II</td>
+                <td>Apollo Quiboloy Jr.</td>
+                <td>sample@gmail.com</td>
+                <td>09234324242</td>
+                <td>Earth 101</td>
 
                 <!--Action-->
                 <td> 
@@ -166,11 +154,10 @@
             
               <tr>
                 <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-                <td>SID123453</td>
-                <td>78</td>
-                <td>12,000</td>
-                <td>October 1, 2024</td>
-                <td>Alice Gou III</td>
+                <td>Alice Gou II</td>
+                <td>sample@gmail.com</td>
+                <td>09234324242</td>
+                <td>China Bank</td>
 
                 <!--Action-->
                 <td> 
@@ -192,11 +179,10 @@
 
               <tr>
                 <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-                <td>SID123454</td>
-                <td>100</td>
-                <td>10,000</td>
-                <td>October 1, 2024</td>
-                <td>Juan Dela Cruz</td>
+                <td>Alice Gou III</td>
+                <td>sample@gmail.com</td>
+                <td>09234324242</td>
+                <td>China</td>
 
                 <!--Action-->
                 <td> 
@@ -218,13 +204,12 @@
 
             <tr>
               <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-              <td>SID123455</td>
-              <td>300</td>
-              <td>5,000</td>
-              <td>October 1, 2024</td>
-              <td>Apollo Quiboloy Jr.</td>
+              <td>Apollo Quiboloy Sr.</td>
+              <td>sample@gmail.com</td>
+              <td>09234324242</td>
+              <td>Earth 101</td>
 
-                <!--Action-->
+              <!--Action-->
               <td> 
                 <a class="btn btn-primary action-btns" id="action-btn-3" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
                   <img src="..\static\images\more_horiz_24dp_666666.png" class="action-img" alt="action">
@@ -244,13 +229,12 @@
 
             <tr>
               <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
-              <td>SID123455</td>
-              <td>57</td>
-              <td>100</td>
-              <td>October 1, 2024</td>
-              <td>Apollo Quiboloy Sr.</td>
+              <td>Juan Dela Cruz</td>
+              <td>sample@gmail.com</td>
+              <td>09234324242</td>
+              <td>Tondo, Manila</td>
 
-                <!--Action-->
+              <!--Action-->
               <td> 
                 <a class="btn btn-primary action-btns" id="action-btn-3" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
                   <img src="..\static\images\more_horiz_24dp_666666.png" class="action-img" alt="action">
@@ -303,7 +287,7 @@
         </div>          
           <!--Go Back Button-->
           <div class="d-flex justify-content-end">
-            <a class="btn btn-primary" href="#" role="button">Go Back</a>
+            <a class="btn btn-primary" href="url" role="button">Go Back</a>
         </div>
       </main>
     </div>
