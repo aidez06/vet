@@ -5,7 +5,6 @@ body {
 }
 
 /* Sidebar */
-
 .sidebar {
     width: 200px;
     background-color: #f8f9fa;
@@ -14,6 +13,7 @@ body {
     padding-top: 20px;
     transition: width 0.3s;
     overflow-y: auto;
+    z-index: 999; /* Added z-index to ensure it's above content */
 }
 
 .sidebar.minimized {
@@ -54,15 +54,17 @@ span.inventory-sidebar {
     padding-left: 9px;
 }
 
+/* Content */
 .content {
-    margin-left: 200px;
+    margin-left: 200px; /* Adjusted to match .sidebar width */
     transition: margin-left 0.3s;
     overflow-y: auto;
-    height: calc(100vh - 20px);
+    height: 100vh;
+    padding: 20px; /* Added padding for spacing */
 }
 
 .content.minimized {
-    margin-left: 80px;
+    margin-left: 80px; /* Adjusted to match .sidebar.minimized width */
 }
 
 .toggle-btn {
@@ -122,41 +124,11 @@ span.inventory-sidebar {
     color: #911d1d;
 }
 
-/* Content Responsive*/
-@media (min-width: 768px) {
-    .container, .container-md, .container-sm {
-        /* max-width: 720px; */
-        margin-left: 10px;
-        padding-right: 30px;
-    }
-}
-
-@media (min-width: 576px) {
-    .container, .container-sm {
-        /* max-width: 540px; */
-        margin-left: 10px;
-    }
-}
-
-@media (max-width: 400px) {
-    .card-head h5 {
-        font-size: 1rem;
-    }
-
-    .list-group {
-        font-size: 1rem;
-    }
-
-    .list-group-item {
-        font-size: 1rem;
-        padding: 0rem;
-        margin: 0rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .list-group-item img {
-        width: 5px;
-        height: 5px;
+/* Responsive Content */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0; /* Allows full width on smaller screens */
+        padding: 15px;
     }
 }
 
@@ -170,3 +142,17 @@ span.inventory-sidebar {
     transform: translateY(-5px);
 }
 
+/* Card Preview */
+.cart-preview {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #48a9dd;
+}
+
+.cart-preview:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(-5px);
+}
+
+.cart {
+    background: #ededed;
+}
