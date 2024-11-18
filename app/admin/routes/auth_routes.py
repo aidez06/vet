@@ -1,5 +1,5 @@
 from flask import (request, render_template, 
-                   url_for, jsonify, 
+                   url_for, jsonify, redirect, 
                    session,Blueprint)
 from client.model.users import Client, db
 import os
@@ -23,18 +23,18 @@ def show_login_admin():
 @auth_admin.route('/login-admin', methods=['POST'])
 def login_admin():
     # Process login form data here (e.g., check username and password)
-    username = request.form.get('username')
+    username = request.form.get('email')
     password = request.form.get('password')
-    # Query database to check if a user exists with this username or email
-    user = Client.query.filter((Client.email == username_or_email) | (Client.uname == username_or_email)).first()
+    print('Starting...')
+    print(username, password)
     
-    if not user or not user.check_password(password):
-        # Return JSON error message for invalid credentials
-        return jsonify({'message': 'Invalid username/email or password.'}), 404
-      
-    # If login is successful, set session or return success message
-    # If login is successful, set session data
-    session['user_id'] = user.client_id  # Store the user ID in the session
-    session['username'] = user.uname  # Store the username in the session
-    return jsonify({'message': 'Login successful!', 'redirect': url_for('dashboard_admin.admin-dashboard')}), 200
+    # Example: Query the Client model to authenticate
+    client = Client.query.filter_by(email=username).first()
     
+    if client and client.check_password(password):  # Assume check_password method exists
+        # Set session or other login state here
+        session['admin_logged_in'] = True
+        return redirect(url_for('admin.admin-pos'))  # Redirect to admin dashboard or other page
+    
+    # If login fails, redirect back to login page or show error
+    return render_template('admin-login.html', error="Invalid credentials")

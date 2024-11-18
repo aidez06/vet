@@ -16,12 +16,23 @@ dashboard_admin = Blueprint(
     static_folder=static_folder,  
     template_folder=template_folder 
 )
+
+@dashboard_admin.route('/dashboard')
+def admin_dashbaord():
+    return render_template('admin-dashboard.html')
+
+@dashboard_admin.route('/pos')
+def admin_pos():
+    return render_template('admin-pos-product.html')
+
 @dashboard_admin.route('/add-product')
 def add_product():
     return render_template('admin-add-product.html')
+
 @dashboard_admin.route('/products')
 def products():
     return render_template('admin-product-table.html')
+
 @dashboard_admin.route('/manage-appointment')
 def manage_appointment():
     appointments = Appoint.query.join(Client).join(Pet).all()
@@ -110,6 +121,7 @@ def update_appointment(appointment_id):
     except Exception as e:
         db.session.rollback()  # Rollback the transaction if there’s an error
         return jsonify({"status": "error", "message": str(e)}), 500
+    
 @dashboard_admin.route('/delete-appointment/<int:appointment_id>', methods=['DELETE'])
 def delete_appointment(appointment_id):
     # Fetch the appointment
