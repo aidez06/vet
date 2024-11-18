@@ -38,6 +38,7 @@ def appointments():
     print(appointment_data)
     # Pass the data to the template
     return render_template('admin-dashboard.html', appointments=appointment_data)
+
 @dashboard_admin.route('/admin/get-appointment/<int:appointment_id>', methods=['GET'])
 def get_appointment(appointment_id):
     appointment = Appoint.query.get(appointment_id)
@@ -59,6 +60,7 @@ def get_appointment(appointment_id):
     }
 
     return jsonify({"status": "success", "data": appointment_data}), 200
+
 @dashboard_admin.route('/update-appointment/<int:appointment_id>', methods=['PUT'])
 def update_appointment(appointment_id):
     # Retrieve the data sent in the request body
