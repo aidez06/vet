@@ -1,5 +1,5 @@
 from flask import (request, render_template, 
-                   url_for, jsonify, 
+                   url_for, jsonify, redirect, 
                    session,Blueprint)
 from client.model.users import Client, db
 import os
@@ -32,7 +32,7 @@ def login_admin():
     if client and client.check_password(password):  # Assume `check_password` method exists
         # Set session or other login state here
         session['admin_logged_in'] = True
-        return redirect(url_for('dashboard'))  # Redirect to admin dashboard or other page
+        return redirect(url_for('admin.dashboard'))  # Redirect to admin dashboard or other page
     
     # If login fails, redirect back to login page or show error
     return render_template('admin-login.html', error="Invalid credentials")

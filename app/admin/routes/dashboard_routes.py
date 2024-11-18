@@ -16,9 +16,14 @@ dashboard_admin = Blueprint(
     static_folder=static_folder,  
     template_folder=template_folder 
 )
+@dashboard_admin.route('/pos')
+def admin_pos():
+    return render_template('admin-pos-product.html')
+
 @dashboard_admin.route('/add-product')
 def add_product():
     return render_template('admin-add-product.html')
+
 @dashboard_admin.route('/products')
 def products():
     return render_template('admin-product-table.html')

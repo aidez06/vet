@@ -31,7 +31,7 @@ def make_session_permanent():
     session.permanent = True  # Make the session permanent
 app.register_blueprint(public, url_prefix='/public') 
 app.register_blueprint(auth, url_prefix='/auth')
-app.register_blueprint(auth_admin, url_prefix='/admin')
+app.register_blueprint(auth_admin, url_prefix='/admin-auth')
 app.register_blueprint(dashboard_admin, url_prefix='/admin')
 app.register_blueprint(book)
 
