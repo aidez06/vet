@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="../static/css/pos.css" rel="stylesheet">
+    <link href="{{ url_for('dashboard_admin.static', filename='css/pos.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 </head>
@@ -16,19 +16,19 @@
       <nav class="nav flex-column">
           <!-- Profile Section -->
           <a class="nav-link user-profile" href="#">
-              <img src="../static/images/pug-profile.jpg" alt="profile">
-              <span>
-                  <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
-                  <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
-              </span>
+            <img src="{{ url_for('auth_admin.static', filename='img/pug-profile.jpg') }}" alt="profile">
+            <span>
+                <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
+                <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
+            </span>
           </a>
           <hr class="sidebar-divider">
 
           <!-- Main Navigation -->
           <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
-          <a class="nav-link" href="admin_dashboard.html"><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
-          <a class="nav-link text-primary" href="#"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
-          <a class="nav-link" href="admin_appointment.html"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.admin_dashbaord') }}" ><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
+          <a class="nav-link  text-primary" href="{{ url_for('dashboard_admin.admin_pos') }}"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.admin_appointment') }}"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
 
           <!-- Inventory Section -->
           <p class="d-inline-flex gap-1 mb-0 align-items-center">
@@ -38,19 +38,19 @@
               </a>
           </p>
           <div class="collapse show" id="collapseExample">
-              <a class="nav-link d-flex align-items-center mb-3" href="sales-table.html"><span>&emsp;Sales</span></a>
-              <a class="nav-link d-flex align-items-center mb-3" href="product-table.html"><span>&emsp;Product</span></a>
-              <a class="nav-link d-flex align-items-center mb-3" href="supplier_table.html"><span>&emsp;Suppliers</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.sales') }}"><span>&emsp;Sales</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.products') }}"><span>&emsp;Product</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.suppliers') }}"><span>&emsp;Suppliers</span></a>
           </div>
 
-          <a class="nav-link" href="manage_users.html"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
-          <a class="nav-link" href="manage_clients.html"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.manage_users') }}"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.manage_clients') }}"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
 
           <hr class="sidebar-divider">
 
           <!-- Settings Section -->
           <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
-          <a class="nav-link logout" href="#"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
+          <a class="nav-link logout" href="{{ url_for('auth_admin.login_admin') }}"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
         </nav>
     </div>
 
@@ -59,8 +59,8 @@
       <main class="container me-0 w-100 p-5">
         <div class="d-flex justify-content-center mb-3">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <a type="button" class="btn btn-outline-dark" href="pos.html">Products & Services</a>
-                <a type="button" class="btn btn-dark" href="pos_transactions.html">Transaction History</a>
+                <a type="button" class="btn btn-outline-dark" href="{{ url_for('dashboard_admin.admin_pos') }}">Products & Services</a>
+                <a type="button" class="btn btn-dark" href="{{ url_for('dashboard_admin.admin_pos_transactions') }}">Transaction History</a>
             </div>
         </div>
         
@@ -190,7 +190,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="..\static\js\sidebar.js"></script>
+    <script src="{{ url_for('dashboard_admin.static', filename='js/sidebar.js') }}"></script>
 
 </body>
 </html>

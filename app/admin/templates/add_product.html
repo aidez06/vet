@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <link href="{{ url_for('dashboard_admin.static', filename='css/add-product.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
@@ -22,36 +21,36 @@
               <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
               <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
           </span>
-      </a>
-      <hr class="sidebar-divider">
+        </a>
+        <hr class="sidebar-divider">
 
-      <!-- Main Navigation -->
-      <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
-      <a class="nav-link" href="{{ url_for('dashboard_admin.admin_dashbaord') }}" ><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
-      <a class="nav-link" href="{{ url_for('dashboard_admin.admin_pos') }}"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
-      <a class="nav-link" href="{{ url_for('dashboard_admin.admin_appointment') }}"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
+        <!-- Main Navigation -->
+        <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
+        <a class="nav-link" href="{{ url_for('dashboard_admin.admin_dashbaord') }}" ><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="{{ url_for('dashboard_admin.admin_pos') }}"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
+        <a class="nav-link" href="{{ url_for('dashboard_admin.admin_appointment') }}"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
 
-      <!-- Inventory Section -->
-      <p class="d-inline-flex gap-1 mb-0 align-items-center">
-          <a class="btn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
-              <i class="bi bi-bar-chart fs-5"></i>
-              <span class="inventory-sidebar ms-2">Inventory<i class="bi bi-caret-down-fill"></i></span>
-          </a>
-      </p>
-      <div class="collapse show" id="collapseExample">
-          <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.sales') }}"><span>&emsp;Sales</span></a>
-          <a class="nav-link d-flex align-items-center mb-3  text-primary" href="{{ url_for('dashboard_admin.products') }}"><span>&emsp;Product</span></a>
-          <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.suppliers') }}"><span>&emsp;Suppliers</span></a>
-      </div>
+        <!-- Inventory Section -->
+        <p class="d-inline-flex gap-1 mb-0 align-items-center">
+            <a class="btn d-flex align-items-center" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+                <i class="bi bi-bar-chart fs-5"></i>
+                <span class="inventory-sidebar ms-2">Inventory<i class="bi bi-caret-down-fill"></i></span>
+            </a>
+        </p>
+        <div class="collapse show" id="collapseExample">
+            <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.sales') }}"><span>&emsp;Sales</span></a>
+            <a class="nav-link d-flex align-items-center mb-3  text-primary" href="{{ url_for('dashboard_admin.products') }}"><span>&emsp;Product</span></a>
+            <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.suppliers') }}"><span>&emsp;Suppliers</span></a>
+        </div>
 
-      <a class="nav-link" href="{{ url_for('dashboard_admin.manage_users') }}"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
-      <a class="nav-link" href="{{ url_for('dashboard_admin.manage_clients') }}"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
+        <a class="nav-link" href="{{ url_for('dashboard_admin.manage_users') }}"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
+        <a class="nav-link" href="{{ url_for('dashboard_admin.manage_clients') }}"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
 
-      <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
 
-      <!-- Settings Section -->
-      <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
-      <a class="nav-link logout" href="{{ url_for('auth_admin.login_admin') }}"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
+        <!-- Settings Section -->
+        <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
+        <a class="nav-link logout" href="{{ url_for('auth_admin.login_admin') }}"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
       </nav>
   </div>
 
@@ -92,6 +91,12 @@
                             <input type="email" class="form-control control-product" id="AddProduct1">
                           </div>
 
+                        <!--Price-->
+                          <div class="mb-3 input-with-image">
+                            <label for="AddProduct1" class="form-label">Price</label>
+                            <input type="number" class="form-control control-product" id="AddProduct1">
+                          </div>
+
                         <!--Supplier-->
                           <div class="mb-3 input-with-image">
                             <label for="AddSupplier1" class="form-label">Supplier</label>
@@ -108,7 +113,7 @@
                       </form>
 
                   <!--Option Buttons-->
-                  <div class="position-absolute bottom-0 start-50 translate-middle-x add-btn">
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
                     <a href="{{ url_for('dashboard_admin.products') }}" class="btn btn-primary add-cancel add-choice">Cancel</a>
                     <a href="#" class="btn btn-primary add-add add-choice">Add</a>
                   </div>

@@ -23,7 +23,19 @@ def admin_dashbaord():
 
 @dashboard_admin.route('/pos')
 def admin_pos():
-    return render_template('admin-pos-product.html')
+    return render_template('pos.html')
+
+@dashboard_admin.route('/pos/transactions')
+def admin_pos_transactions():
+    return render_template('pos_transactions.html')
+
+@dashboard_admin.route('/appointment')
+def admin_appointment():
+    return render_template('admin_appointment.html')
+
+@dashboard_admin.route('/add-appointment')
+def admin_add_appointment():
+    return render_template('add_appointment.html')
 
 @dashboard_admin.route('/add-product')
 def add_product():
@@ -31,12 +43,37 @@ def add_product():
 
 @dashboard_admin.route('/products')
 def products():
-    return render_template('admin-product-table.html')
+    return render_template('product-table.html')
+
+@dashboard_admin.route('/sales')
+def sales():
+    return render_template('sales-table.html')
+
+@dashboard_admin.route('/suppliers')
+def suppliers():
+    return render_template('supplier.html')
 
 @dashboard_admin.route('/manage-appointment')
 def manage_appointment():
-    appointments = Appoint.query.join(Client).join(Pet).all()
-    return render_template('manage-appointment.html', appointments=appointments)
+    # appointments = Appoint.query.join(Client).join(Pet).all()
+    # return render_template('manage-appointment.html', appointments=appointments)
+    return render_template('manage-appointment.html')
+
+@dashboard_admin.route('/manage-users')
+def manage_users():
+    return render_template('manage_users.html')
+
+@dashboard_admin.route('/add-users')
+def add_users():
+    return render_template('add_new_user.html')
+
+@dashboard_admin.route('/manage-clients')
+def manage_clients():
+    return render_template('manage_clients.html')
+
+@dashboard_admin.route('/add-clients')
+def add_clients():
+    return render_template('add_client.html')
 
 @dashboard_admin.route('/appointments')
 def appointments():

@@ -17,19 +17,19 @@
       <nav class="nav flex-column">
           <!-- Profile Section -->
           <a class="nav-link user-profile" href="#">
-              <img src="../static/images/pug-profile.jpg" alt="profile">
-              <span>
-                  <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
-                  <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
-              </span>
+            <img src="{{ url_for('auth_admin.static', filename='img/pug-profile.jpg') }}" alt="profile">
+            <span>
+                <p class="m-0 p-0 small-text">PRODUCT MANAGER</p>
+                <p class="m-0 p-0 fw-semibold">McArthur Flurry</p>
+            </span>
           </a>
           <hr class="sidebar-divider">
 
           <!-- Main Navigation -->
           <p class="nav-link mb-0 pb-0 small-text">MAIN</p>
-          <a class="nav-link" href="admin_dashboard.html"><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
-          <a class="nav-link" href="#"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
-          <a class="nav-link" href="admin_appointment.html"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
+          <a class="nav-link  text-primary" href="{{ url_for('dashboard_admin.admin_dashbaord') }}" ><i class="bi bi-house fs-5"></i><span>Dashboard</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.admin_pos') }}"><i class="bi bi-file-earmark-text fs-5"></i><span>POS</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.admin_appointment') }}"><i class="bi bi-calendar fs-5"></i><span>Appointment</span></a>
 
           <!-- Inventory Section -->
           <p class="d-inline-flex gap-1 mb-0 align-items-center">
@@ -39,19 +39,19 @@
               </a>
           </p>
           <div class="collapse show" id="collapseExample">
-              <a class="nav-link d-flex align-items-center mb-3" href="sales-table.html"><span>&emsp;Sales</span></a>
-              <a class="nav-link text-primary d-flex align-items-center mb-3" href="product-table.html"><span>&emsp;Product</span></a>
-              <a class="nav-link d-flex align-items-center mb-3" href="#"><span>&emsp;Suppliers</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.sales') }}"><span>&emsp;Sales</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.products') }}"><span>&emsp;Product</span></a>
+              <a class="nav-link d-flex align-items-center mb-3" href="{{ url_for('dashboard_admin.suppliers') }}"><span>&emsp;Suppliers</span></a>
           </div>
 
-          <a class="nav-link" href="#"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
-          <a class="nav-link" href="#"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.manage_users') }}"><i class="bi bi-person fs-5"></i><span>Manage Users</span></a>
+          <a class="nav-link" href="{{ url_for('dashboard_admin.manage_clients') }}"><i class="bi bi-person fs-5"></i><span>Manage Clients</span></a>
 
           <hr class="sidebar-divider">
 
           <!-- Settings Section -->
           <a class="nav-link" href="#"><i class="bi bi-question-circle fs-5"></i><span>Help</span></a>
-          <a class="nav-link logout" href="#"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
+          <a class="nav-link logout" href="{{ url_for('auth_admin.login_admin') }}"><i class="bi bi-box-arrow-right fs-5"></i><span>Logout Account</span></a>
         </nav>
     </div>
 
